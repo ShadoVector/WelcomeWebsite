@@ -1,87 +1,70 @@
-# React coming soon template
+# Getting Started with Create React App
 
-Kick off your new website with coming soon starter template.
-Coming soon website templates helps you to retain customers when you are busy in revamping your website.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The message you show in the coming soon plays a vital role in retaining the visitors and to collect new leads. So tailor the message to your audience and make a strong first impression for the new users.
-There are other two web elements: animated countdown timer and sign-up form.
+## Available Scripts
 
-![Screenshoot of demo](https://github.com/arrlancore/react-coming-soon-template/blob/master/screenshoot.png)
+In the project directory, you can run:
 
-## 🚀 Prerequisites
+### `npm start`
 
-- <a href="https://yarnpkg.com/en/">Yarn</a>, follow the installation <a href="https://yarnpkg.com/en/docs/install">guide</a>
-- <a href="https://nodejs.org/en/">Node.js</a>
-- <a href="https://github.com/firebase/firebase-tools">Firebase</a>, if you want to hosting at firebase
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```
-    $ npm install -g firebase-tools
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## 🚀 Quick start
+### `npm test`
 
-Clone the repository. Update as you required and upload to your hosting.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-**Simple clone.**
+### `npm run build`
 
-```
-    $ git clone https://github.com/arrlancore/react-coming-soon-template.git
-    $ cd react-coming-soon-template
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Installation
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-        $ yarn
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-The following dependencies will be installed:
+### `npm run eject`
 
-```
-    gatsby: ^2.0.0
-    gatsby-plugin-manifest: ^2.0.2
-    gatsby-plugin-offline: ^2.0.5
-    gatsby-plugin-react-helmet: ^3.0.0
-    react: ^16.5.1
-    react-dom: ^16.5.1
-    react-helmet: ^5.2.0
-```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Customising
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- Type your own header, message and set the timer in index.js.
-- Add your own background image in layout.css.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-To set timer add props date and time at Timer component, example:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-    <Timer  date="10/31/2018" time="19.00">
+## Learn More
 
-## Deployment
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-1. Deploying with firebase CLI
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-   Build Project
+### Code Splitting
 
-   ```sh
-   $ yarn build
-   ```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-   Upload to Firebase.
+### Analyzing the Bundle Size
 
-   ```sh
-   $ firebase login
-   $ firebase init
-   $ firebase deploy
-   ```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-2. Deploying with netlify
+### Making a Progressive Web App
 
-   - Sign up with Github/Gitlab/Bitbucket or Email
-   - Connect to Git Provider
-   - Authorize Git Provider
-   - Pick Your Repository
-   - Select Branch to Deploy (Default: master)
-   - Change the build command to `yarn build`
-   - Click `Deploy` button
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## License
+### Advanced Configuration
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
