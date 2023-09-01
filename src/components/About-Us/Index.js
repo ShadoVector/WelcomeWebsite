@@ -1,8 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import hustler from "../pictures/hustler.jpg";
-import hacker from "../pictures/hacker.jpg";
-import hipster from "../pictures/hipster.jpg";
+
 
 function Index() {
   return (

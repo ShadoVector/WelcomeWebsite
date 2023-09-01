@@ -1,5 +1,5 @@
 import React from "react";
-import { CreditCardIcon, EmojiHappyIcon, StatusOfflineIcon, WifiIcon} from "@heroicons/react/outline";
+import { CreditCardIcon, StatusOfflineIcon, WifiIcon} from "@heroicons/react/outline";
 
 function Overview() {
   return (

@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.180da466.css",
+    "main.js": "/static/js/main.0303214f.js",
+    "static/media/moneysync-mockup.svg": "/static/media/moneysync-mockup.e0b8630845cf83dfdc6c374facfe7af9.svg",
+    "static/media/pay-by-bank-card.svg": "/static/media/pay-by-bank-card.1d78d93a3c16ddb4f7b71895797b7b81.svg",
+    "static/media/asked.svg": "/static/media/asked.215cdcf8571057d5ea0d01cfa51e8160.svg",
+    "static/media/logo.svg": "/static/media/logo.4223f367cb158da173f398f24c64acb0.svg",
+    "index.html": "/index.html",
+    "main.180da466.css.map": "/static/css/main.180da466.css.map",
+    "main.0303214f.js.map": "/static/js/main.0303214f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.180da466.css",
+    "static/js/main.0303214f.js"
+  ]
+}
