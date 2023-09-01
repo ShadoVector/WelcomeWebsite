@@ -6,7 +6,7 @@ function Faqs() {
     <div className="mx-20 my-9">
       <h2 className="text-5xl font-semibold my-3 ml-1">FAQs</h2>
       <div>
-        <div className="w-full max-w-3xl p-2  bg-white rounded-2xl">
+        <div className="w-full max-w p-2  bg-white rounded-2xl">
           <Disclosure>
             {({ open }) => (
               <>
