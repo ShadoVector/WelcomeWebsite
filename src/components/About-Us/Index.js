@@ -15,7 +15,7 @@ function Index() {
         
         <div className="flex flex-col items-center border-gray-100 rounded-md border-2 max-w-max py-5 px-10 transition-all duration-150 ease-out hover:scale-105">
           
-          <h5 className="font-semibold mt-5">Goutham A</h5>
+          <h5 className="font-semibold mt-5">Xexon</h5>
           <p className="font-light">Founding Technical Member</p>
           <div className="flex mt-8 gap-6 w-max">
             <Icon
