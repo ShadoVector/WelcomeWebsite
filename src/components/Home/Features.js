@@ -22,7 +22,7 @@ function Features() {
             <div>
               <h5 className="font-semibold text-lg">Instant Merchant Transfer</h5>
               <p className="text-gray-600">
-                Send or request money to your friends easily.
+                No waiting time to receive the money just tap the money will in your account.
               </p>
             </div>
             
@@ -43,7 +43,7 @@ function Features() {
             <div>
               <h5 className="font-semibold text-lg">Card Management and Analysis</h5>
               <p className="text-gray-600">
-                Provide all you need, split bill, group payment, virtucard, etc.
+                Provide detailed analysis on your card payment and history.
               </p>
             </div>
           </div>
@@ -83,7 +83,7 @@ function Features() {
             <div>
               <h5 className="font-semibold text-lg">Tap and Pay</h5>
               <p className="text-gray-600">
-                Send or request more fast with qr code scan.
+                Just Tap with Biometric Authentication the payment will be completed.
               </p>
             </div>
           </div>
