@@ -19,7 +19,7 @@ function Contact() {
      
 
         <div style={containerStyle}>
-        <h2 className="text-4xl font-semibold">Comming Soon in</h2>
+        <h2 className="text-4xl font-semibold">Launching Soon in</h2>
           <Countdown />
         </div>
 

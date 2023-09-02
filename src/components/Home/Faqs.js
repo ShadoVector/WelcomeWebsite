@@ -19,11 +19,11 @@ function Faqs() {
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-gray-500">
-                  moneysync is a social payment app, our goals is to make a payment
-                  arounds your social environment more fast, simple, and
-                  interactive. Our aim is to make moneysync a payment social app
-                  that doesnt feel like a ordinary transaction application, but
-                  more like a lifestyle which everyone use for their life.
+                  MoneySync is a Payment and investment Application here we asure users
+                  to secure and effortless payment to merchant and other users
+                  with our tap n pay option we can ensure your payments very secure with Biometric Authentication
+                  with out RFA AI we will analysis the users responses we will provide them recommendations
+                  on with to buy and sell.
                 </Disclosure.Panel>
               </>
             )}
@@ -40,53 +40,10 @@ function Faqs() {
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-gray-500">
-                  We provide many features to help you do any kind of
-                  transaction, start with a simple things like send a money to a
-                  complex like managing and doing transaction for a groups of
-                  people. We also focusing to build an environment in our
-                  application so people that used moneysync doesnt feel like using
-                  a money related application but rather like a social media, so
-                  hopefully it can boost our user experience and they can more
-                  focus to what matters.
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
-          <Disclosure as="div" className="mt-3">
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-700 bg-blue-200 rounded-lg hover:bg-blue-300 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
-                  <span className="text-lg">How it works</span>
-                  <ChevronUpIcon
-                    className={`${
-                      open ? "transform rotate-180" : ""
-                    } w-5 h-5 text-blue-500`}
-                  />
-                </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-gray-500">
-                  moneysync use an social media feels approach where user can add
-                  their friends and then do any transaction in moneysync
-                  application. But you can also send or request money to someone
-                  without need to add them with scanning their qr code.
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
-          <Disclosure as="div" className="mt-3">
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-700 bg-blue-200 rounded-lg hover:bg-blue-300 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
-                  <span className="text-lg">How to change my pin</span>
-                  <ChevronUpIcon
-                    className={`${
-                      open ? "transform rotate-180" : ""
-                    } w-5 h-5 text-blue-500`}
-                  />
-                </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-gray-500">
-                  You can change your confirmation pin through settings in your
-                  profile, select <b>Privacy</b> and then select{" "}
-                  <b>Change my pin</b>
+                  We provide many features to help you for secure transactions than 
+                  any other providers, as we use Biometric Authentication
+                  as we do tap and pay there wont be any middle in the man attacks
+                  also with RFA AI we provide 80-90% accurate results.
                 </Disclosure.Panel>
               </>
             )}

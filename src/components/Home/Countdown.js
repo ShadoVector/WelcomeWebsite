@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useRef, reset} from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function Countdown() {
   const refInstance = useRef(null);
-  const [counter, setCountdown] = useState("00:00:00:00"); // Added days
+  const [counter, setCountdown] = useState("00:00:00:00");
 
   const getCounter = (e) => {
     let all = Date.parse(e) - Date.parse(new Date());
     let s = Math.floor((all / 1000) % 60);
     let m = Math.floor((all / 1000 / 60) % 60);
     let h = Math.floor((all / 1000 / 60 / 60) % 24);
-    let d = Math.floor(all / 1000 / 60 / 60 / 24); // Calculate days
+    let d = Math.floor(all / 1000 / 60 / 60 / 24);
     return {
       all,
       s,
@@ -19,7 +19,7 @@ function Countdown() {
     };
   };
 
-  const initCounter = (e) => {
+  const startCountdown = (e) => {
     let { all, d, h, m, s } = getCounter(e);
     if (all >= 0) {
       setCountdown(
@@ -37,25 +37,15 @@ function Countdown() {
     }
   };
 
-  const reset = (e) => {
-    setCountdown("00:00:00:00"); // Reset to include days
-    if (refInstance.current) clearInterval(refInstance.current);
-    let id = setInterval(() => {
-      initCounter(e);
-    }, 1000);
-    refInstance.current = id;
-  };
-
-  const voidTime = () => {
-    let voidZone = new Date();
-    voidZone.setMonth(6); // Corrected the setMonth method
-    voidZone.setHours(0, 0, 0, 0); // Set time to midnight
-    return voidZone;
-  };
+  const targetDate = new Date("2023-12-31T23:59:59"); // December 31, 2023, at 23:59:59
 
   useEffect(() => {
-    reset(voidTime());
-  }, [voidTime]);
+    startCountdown(targetDate);
+    let id = setInterval(() => {
+      startCountdown(targetDate);
+    }, 1000);
+    refInstance.current = id;
+  }, [targetDate]);
 
   return (
     <>
