@@ -3,141 +3,99 @@ import Group1 from "../pictures/moneysync-mockup.svg";
 
 function Features() {
   return (
-    <div className="flex mx-20 space-x-6 my-40">
-      <div style={{ flexGrow: "2" }} className="space-y-4">
-        <h2 className="font-semibold text-5xl my-4 ">Our Features</h2>
-        <div id="atas" className="flex space-x-4">
-          <div
-            className="flex border-[1.6px] p-4 rounded-md gap-x-4"
-            style={{ flexGrow: "2" }}
-          >
-            {/* <PaperAirplaneIcon className="bg-blue-200 h-14 rounded-full p-3 rotate-45"/> */}
-            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-20">
-              {" "}
-              <Icon
-                icon="mdi:shop-outline"
-                className="text-blue-600 h-10 w-10 ml-1 -rotate-0 mb-1"
-              />
+    <div className="mx-4 sm:mx-20 my-10 sm:my-40 flex flex-wrap justify-between items-center">
+      <div className="w-full sm:w-2/3 space-y-6">
+        <h2 className="font-semibold text-3xl sm:text-5xl my-4">Our Features</h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* Feature 1 */}
+          <div className="border-[1.6px] p-4 rounded-md flex space-x-4">
+            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-16">
+              <Icon icon="mdi:shop-outline" className="text-blue-600 h-10 w-10" />
             </div>
             <div>
               <h5 className="font-semibold text-lg">Instant Merchant Transfer</h5>
               <p className="text-gray-600">
-                No waiting time to receive the money just tap the money will in your account.
-              </p>
-            </div>
-            
-          </div>
-          
-          <div
-            className="flex border-[1.6px] p-4 rounded-md gap-x-4"
-            style={{ flexGrow: "3" }}
-          >
-            {/* <PaperAirplaneIcon className="bg-blue-200 h-14 rounded-full p-3 rotate-45"/> */}
-            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-20">
-              {" "}
-              <Icon
-                icon="ic:round-add-card"
-                className="text-blue-600 h-10 w-10"
-              />
-            </div>
-            <div>
-              <h5 className="font-semibold text-lg">Card Management and Analysis</h5>
-              <p className="text-gray-600">
-                Provide detailed analysis on your card payment and history.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div id="bawah" className="flex space-x-4">
-          <div
-            className="flex border-[1.6px] p-4 rounded-md gap-x-4"
-            style={{ flexGrow: "3" }}
-          >
-            {/* <PaperAirplaneIcon className="bg-blue-200 h-14 rounded-full p-3 rotate-45"/> */}
-            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-20">
-              {" "}
-              <Icon
-                icon="ri:p2p-fill"
-                className="text-blue-600 h-10 w-10 ml-1  mb-1"
-              />
-            </div>
-            <div>
-              <h5 className="font-semibold text-lg">Peer to Peer</h5>
-              <p className="text-gray-600">
-                To boost our user experience, we make it more interactive and
-                fun.
+                No waiting time to receive the money; just tap, and the money will be in your account.
               </p>
             </div>
           </div>
 
-          <div
-            className="flex border-[1.6px] p-4 rounded-md gap-x-4"
-            style={{ flexGrow: "2" }}
-          >
-            {/* <PaperAirplaneIcon className="bg-blue-200 h-14 rounded-full p-3 rotate-45"/> */}
-            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-20">
-              {" "}
+          {/* Feature 2 */}
+          <div className="border-[1.6px] p-4 rounded-md flex space-x-4">
+            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-16">
+              <Icon icon="ic:round-add-card" className="text-blue-600 h-10 w-10" />
+            </div>
+            <div>
+              <h5 className="font-semibold text-lg">Card Management and Analysis</h5>
+              <p className="text-gray-600">
+                Provide detailed analysis of your card payments and history.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          {/* Feature 3 */}
+          <div className="border-[1.6px] p-4 rounded-md flex space-x-4">
+            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-16">
+              <Icon icon="ri:p2p-fill" className="text-blue-600 h-10 w-10" />
+            </div>
+            <div>
+              <h5 className="font-semibold text-lg">Peer to Peer</h5>
+              <p className="text-gray-600">
+                To boost our user experience, we make it more interactive and fun.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 4 */}
+          <div className="border-[1.6px] p-4 rounded-md flex space-x-4">
+            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-16">
               <Icon icon="material-symbols:tap-and-play" className="text-blue-600 h-10 w-10" />
             </div>
             <div>
               <h5 className="font-semibold text-lg">Tap and Pay</h5>
               <p className="text-gray-600">
-                Just Tap with Biometric Authentication the payment will be completed.
+                Just tap with biometric authentication; the payment will be completed.
               </p>
             </div>
           </div>
         </div>
-        <div id="atas" className="flex space-x-4">
-          <div
-            className="flex border-[1.6px] p-4 rounded-md gap-x-4"
-            style={{ flexGrow: "2" }}
-          >
-            {/* <PaperAirplaneIcon className="bg-blue-200 h-14 rounded-full p-3 rotate-45"/> */}
-            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-20">
-              {" "}
-              <Icon
-                icon="mdi:shop-outline"
-                className="text-blue-600 h-10 w-10 ml-1 -rotate-0 mb-1"
-              />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          {/* Feature 5 */}
+          <div className="border-[1.6px] p-4 rounded-md flex space-x-4">
+            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-16">
+              <Icon icon="mdi:shop-outline" className="text-blue-600 h-10 w-10" />
             </div>
             <div>
               <h5 className="font-semibold text-lg">Offline Transactions</h5>
               <p className="text-gray-600">
-                we provide tap n pay for PoS even if no internet
+                We provide tap n pay for PoS even if there is no internet.
               </p>
             </div>
-            
           </div>
-          
-          <div
-            className="flex border-[1.6px] p-4 rounded-md gap-x-4"
-            style={{ flexGrow: "3" }}
-          >
-            {/* <PaperAirplaneIcon className="bg-blue-200 h-14 rounded-full p-3 rotate-45"/> */}
-            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-20">
-              {" "}
-              <Icon
-                icon="ant-design:stock-outlined"
-                className="text-blue-600 h-10 w-10"
-              />
+
+          {/* Feature 6 */}
+          <div className="border-[1.6px] p-4 rounded-md flex space-x-4">
+            <div className="bg-blue-200 rounded-full p-2 flex justify-center items-center h-16 w-16">
+              <Icon icon="ant-design:stock-outlined" className="text-blue-600 h-10 w-10" />
             </div>
             <div>
               <h5 className="font-semibold text-lg">RFA AI</h5>
               <p className="text-gray-600">
-                Risk Factor Analysis AI in house api for your investment recommendations
+                Risk Factor Analysis AI in-house API for your investment recommendations.
               </p>
             </div>
           </div>
         </div>
-        <p className="text-lg font-medium text-blue-600">And many more!</p>
+
+        <p className="text-lg font-medium text-blue-600 mt-6">And many more!</p>
       </div>
-      
-      <div
-        style={{ flexGrow: "1" }}
-        className="bg-blue-200 max-w-6xl rounded-xl px-20 py-0"
-      >
-        <img src={Group1} alt="" className="scale-100 pb-10" />
+
+      <div className="w-full sm:w-1/3 bg-blue-200 rounded-xl px-4 sm:px-20 py-0 mt-6">
+        <img src={Group1} alt="" className="w-full scale-100 pb-10" />
       </div>
     </div>
   );
