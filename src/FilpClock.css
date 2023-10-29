@@ -1,0 +1,17 @@
+/* Change the background and font color to blue */
+.flip-clock-wrapper ul {
+    background-color: #3498db; /* Blue background color */
+    color: #fff; /* White font color */
+  }
+  
+  /* Change the color of the separators (colons) */
+  .flip-clock-divider a div div {
+    background-color: #3498db; /* Blue separator color */
+    color: #fff; /* White separator font color */
+  }
+  
+  /* Optionally, you can change the font size */
+  .flip-clock-wrapper ul {
+    font-size: 24px; /* Adjust the font size as needed */
+  }
+  

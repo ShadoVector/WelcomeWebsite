@@ -1,22 +1,21 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import AboutUs from "./pages/AboutUs";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Home from "./pages/Home";
+// Define your components for different routes
+import Home from './components/HomePage';
+import AboutUs from './components/AboutUs';
+import Features from './components/Features';
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-        
-          <Route path="/about-us" element={<AboutUs/>} />
-        </Routes>
-    </BrowserRouter>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/features" element={<Features />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
