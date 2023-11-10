@@ -13,14 +13,12 @@ import Typed from "typed.js";
 import CountdownTimer from './CountdownTimer';
 
 
-// CSS for the fixed navigation bar
 const appBarStyles = {
     position: 'static',
     backgroundColor: 'white',
     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
 };
 
-// CSS for the scrolled navigation bar
 const scrolledAppBarStyles = {
     backgroundColor: 'white',
     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
@@ -60,6 +58,18 @@ function FeatureCard({ icon, title, description }) {
 
 
 const HomePage = () => {
+
+    const buttonStyle = {
+        backgroundColor:'white',
+        color: '#1976d2', // Default button color
+        fontWeight: 'bold', // Add font weight
+        marginRight: '10px', // Add right margin between buttons
+    };
+
+    const buttonHoverStyle = {
+        backgroundColor:'#1976d2',
+        color: '#fff', // Button color on hover
+    };
 
     const navigate = useNavigate();
 
@@ -110,9 +120,9 @@ const HomePage = () => {
             <HideOnScroll>
                 <AppBar style={scrolled ? scrolledAppBarStyles : appBarStyles}>
                     <Toolbar>
-                        <img src={logo} alt="MoneySync Pay" style={{ maxWidth: '120px' }} />
+                        <img src={logo} alt="Teleport Pay" style={{ maxWidth: '120px' }} />
                         <div style={{ flex: 1 }}></div>
-                        <Button component={Link} to="/">Home</Button>
+                        <Button style = {buttonStyle} sx={{ '&:hover': buttonHoverStyle, }}component={Link} to="/">Home</Button>
                         <Button component={Link} to="/about">About</Button>
                         <Button component={Link} to="/features">Features</Button>
                     </Toolbar>
@@ -130,7 +140,7 @@ const HomePage = () => {
                             <div className="text-center my-6 md:my-16">
                                 <div className="relative">
                                     <h1 className="font-bold text-white text-4xl md:text-6xl mb-4 md:mb-6 leading-[56px] z-50">
-                                        All Your <span className="text-blue-400" ref={el}></span>
+                                        All Your <span style={{ color: '#e2725b' }} ref={el}></span>
                                         <br />
                                         Payment Made Easy
                                     </h1>
@@ -141,7 +151,7 @@ const HomePage = () => {
                             </div>
                         </div>
                         <div style={{ flex: 1 }}>
-                            <img src={heroImage} alt="Placeholder" style={{ width: '65%', animation: 'moveRight 1s linear' }} />
+                            <img src={heroImage} alt="Placeholder" style={{ width: '40%', animation: 'moveRight 1s linear' }} />
                         </div>
                     </div>
                 </section>
@@ -232,7 +242,7 @@ const HomePage = () => {
                         <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-start">
                             <div className="flex items-center">
                                 <div className="flex flex-col items-center"> {/* Center the logo and social media icons */}
-                                    <img src={logo} alt="" style={{ width: "100px", height: "100px" }} />
+                                    <img src={logo} alt="" style={{ width: "400px", height: "100px" }} />
                                     <div className="sm:w-full mt-2"> {/* "Follow Us" text positioned below the logo */}
                                         <div className="flex flex-col space-y-2 items-center">
                                             <h5 className="font-medium text-lg">Follow Us</h5>
@@ -242,28 +252,28 @@ const HomePage = () => {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:linkedin" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:linkedin" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}/>
                                                 </a>
                                                 <a
                                                     href="https://www.facebook.com/your_facebook_profile"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:twitter" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:twitter" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                                 <a
                                                     href="https://www.instagram.com/your_instagram_profile"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:instagram" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:instagram" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                                 <a
                                                     href="https://www.facebook.com/your_facebook_profile"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:facebook" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:facebook" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                             </div>
 
@@ -305,7 +315,7 @@ const HomePage = () => {
 
                 </div>
                 <h5 className="text-center font-medium mt-8">
-                    Copyright &copy; {new Date().getFullYear()} <span className="text-blue-600">Moneysync</span>.
+                    Copyright &copy; {new Date().getFullYear()} <span style={{ color: '#e2725b' }}>Teleport Pay</span>.
                     All rights reserved.
                 </h5>
             </footer>

@@ -39,17 +39,17 @@ function HideOnScroll(props) {
 
 const Features = () => {
 
-        
+
     const features = [
         {
             heading: 'Instant Merchant Transfer',
             description:
-                'Experience instant money transfers with MoneySync Pay. Say goodbye to waiting times; simply tap, and the money will be in your account in an instant.',
+                'Experience instant money transfers with Teleport Pay. Say goodbye to waiting times; simply tap, and the money will be in your account in an instant.',
             image: merchant,
         },
         {
             heading: 'Card Management and Analysis',
-            description: 'Manage your cards with ease and gain deep insights into your card payments and history with MoneySync Pay.',
+            description: 'Manage your cards with ease and gain deep insights into your card payments and history with Teleport Pay.',
             image: card,
         },
         {
@@ -59,17 +59,17 @@ const Features = () => {
         },
         {
             heading: 'Tap and Pay',
-            description: 'Complete payments with a simple tap using biometric authentication. MoneySync Pay makes payments quick and easy.',
+            description: 'Complete payments with a simple tap using biometric authentication. Teleport Pay makes payments quick and easy.',
             image: tap,
         },
         {
             heading: 'Offline Transactions',
-            description: 'Don\'t worry about the lack of internet access. MoneySync Pay allows tap-and-pay for Point of Sale (PoS) transactions, even without an internet connection.',
+            description: 'Don\'t worry about the lack of internet access. Teleport Pay allows tap-and-pay for Point of Sale (PoS) transactions, even without an internet connection.',
             image: offline,
         },
         {
             heading: 'RFA AI',
-            description: 'Utilize our in-house Risk Factor Analysis AI API to receive investment recommendations and insights, making informed decisions with MoneySync Pay.',
+            description: 'Utilize our in-house Risk Factor Analysis AI API to receive investment recommendations and insights, making informed decisions with Teleport Pay.',
             image: rfai,
         },
     ];
@@ -98,7 +98,7 @@ const Features = () => {
             <HideOnScroll>
                 <AppBar style={scrolled ? scrolledAppBarStyles : appBarStyles}>
                     <Toolbar>
-                        <img src={logo} alt="MoneySync Pay" style={{ maxWidth: '120px' }} />
+                        <img src={logo} alt="Teleport Pay" style={{ maxWidth: '120px' }} />
                         <div style={{ flex: 1 }}></div>
                         <Button component={Link} to="/">Home</Button>
                         <Button component={Link} to="/about">About</Button>
@@ -110,14 +110,14 @@ const Features = () => {
                 {features.map((feature, index) => (
                     <FeatureCard key={index} feature={feature} />
                 ))}
-            </div>            
+            </div>
             <footer>
                 <div className="border-t-2 border-gray-200 mt-16 sm:mt-32">
                     <div className="mx-4 sm:mx-20 p-6 space-y-8 sm:space-y-12 text-center sm:text-left">
                         <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-start">
                             <div className="flex items-center">
                                 <div className="flex flex-col items-center"> {/* Center the logo and social media icons */}
-                                    <img src={logo} alt="" style={{ width: "100px", height: "100px" }} />
+                                    <img src={logo} alt="" style={{ width: "400px", height: "100px" }} />
                                     <div className="sm:w-full mt-2"> {/* "Follow Us" text positioned below the logo */}
                                         <div className="flex flex-col space-y-2 items-center">
                                             <h5 className="font-medium text-lg">Follow Us</h5>
@@ -127,28 +127,28 @@ const Features = () => {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:linkedin" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:linkedin" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                                 <a
                                                     href="https://www.facebook.com/your_facebook_profile"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:twitter" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:twitter" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                                 <a
                                                     href="https://www.instagram.com/your_instagram_profile"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:instagram" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:instagram" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                                 <a
                                                     href="https://www.facebook.com/your_facebook_profile"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:facebook" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:facebook" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                             </div>
 
@@ -190,10 +190,11 @@ const Features = () => {
 
                 </div>
                 <h5 className="text-center font-medium mt-8">
-                    Copyright &copy; {new Date().getFullYear()} <span className="text-blue-600">Moneysync</span>.
+                    Copyright &copy; {new Date().getFullYear()} <span style={{ color: '#e2725b' }}>Teleport Pay</span>.
                     All rights reserved.
                 </h5>
             </footer>
+
         </div>
     );
 };

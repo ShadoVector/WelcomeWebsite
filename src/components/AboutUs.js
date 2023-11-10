@@ -61,7 +61,7 @@ const AboutUs = () => {
             <HideOnScroll>
                 <AppBar style={scrolled ? scrolledAppBarStyles : appBarStyles}>
                     <Toolbar>
-                        <img src={logo} alt="MoneySync Pay" style={{ maxWidth: '120px' }} />
+                        <img src={logo} alt="Teleport Pay" style={{ maxWidth: '120px' }} />
                         <div style={{ flex: 1 }}></div>
                         <Button component={Link} to="/">Home</Button>
                         <Button component={Link} to="/about">About</Button>
@@ -73,12 +73,12 @@ const AboutUs = () => {
             <div className="text-center mx-20 my-12">
                 <h1 className="text-6xl font-semibold my-4">About Us</h1>
                 <p className="text-light opacity-80 mx-auto">
-                    We are a group of like-minded individuals who came together to create Money Sync, a platform that simplifies financial management and transactions. Our mission is to empower individuals and businesses to take control of their finances.
+                    We are a group of like-minded individuals who came together to create Teleport Pay, <br /> a platform that simplifies financial management and transactions. Our mission is to empower individuals and businesses to take control of their finances.
                 </p>
                 <div className="flex mt-12 justify-between w-3/4 mx-auto">
 
                     <div className="flex flex-col items-center border-gray-100 rounded-md border-2 max-w-max py-5 px-10 transition-all duration-150 ease-out hover:scale-105">
-                        <h5 className="font-semibold mt-5">Xexon</h5>
+                        <h5 className="font-semibold mt-5">Goutham Arcod</h5>
                         <p className="font-light">Founding Technical Member</p>
                         <div className="flex mt-8 gap-6 w-max">
                             <Icon
@@ -117,7 +117,7 @@ const AboutUs = () => {
 
                     {/* Add more team members here */}
                     <div className="flex flex-col items-center border-gray-100 rounded-md border-2 max-w-max py-5 px-10 transition-all duration-150 ease-out hover:scale-105">
-                        <h5 className="font-semibold mt-5">Narayana</h5>
+                        <h5 className="font-semibold mt-5">Narayana Chari</h5>
                         <p className="font-light">Founding Financial Member</p>
                         <div className="flex mt-8 gap-6 w-max">
                             <Icon
@@ -139,7 +139,7 @@ const AboutUs = () => {
                         <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-start">
                             <div className="flex items-center">
                                 <div className="flex flex-col items-center"> {/* Center the logo and social media icons */}
-                                    <img src={logo} alt="" style={{ width: "100px", height: "100px" }} />
+                                    <img src={logo} alt="" style={{ width: "400px", height: "100px" }} />
                                     <div className="sm:w-full mt-2"> {/* "Follow Us" text positioned below the logo */}
                                         <div className="flex flex-col space-y-2 items-center">
                                             <h5 className="font-medium text-lg">Follow Us</h5>
@@ -149,28 +149,28 @@ const AboutUs = () => {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:linkedin" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:linkedin" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                                 <a
                                                     href="https://www.facebook.com/your_facebook_profile"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:twitter" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:twitter" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                                 <a
                                                     href="https://www.instagram.com/your_instagram_profile"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:instagram" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:instagram" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                                 <a
                                                     href="https://www.facebook.com/your_facebook_profile"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <Icon icon="line-md:facebook" className="h-6 w-6 text-blue-600 cursor-pointer hover:text-blue-700" />
+                                                    <Icon icon="line-md:facebook" className="h-6 w-6 cursor-pointer hover:text-blue-700" style={{ color: '#2c4069' }}  />
                                                 </a>
                                             </div>
 
@@ -212,10 +212,11 @@ const AboutUs = () => {
 
                 </div>
                 <h5 className="text-center font-medium mt-8">
-                    Copyright &copy; {new Date().getFullYear()} <span className="text-blue-600">Moneysync</span>.
+                    Copyright &copy; {new Date().getFullYear()} <span style={{ color: '#e2725b' }}>Teleport Pay</span>.
                     All rights reserved.
                 </h5>
             </footer>
+
         </div>
     );
 };
