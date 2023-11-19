@@ -411,7 +411,7 @@ const HomePage = () => {
                   {/* Center align the items */}
                   <h5 className="font-medium text-lg">Our Progress</h5>
                   <a
-                    href="https://www.linkedin.com/company/money-sync-pay/?viewAsMember=true"
+                    href="https://www.linkedin.com/company/teleport-pay/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

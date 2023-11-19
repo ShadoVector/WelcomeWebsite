@@ -108,18 +108,35 @@ const AboutUs = () => {
             <h5 className="font-semibold mt-5">Goutham Arcod</h5>
             <p className="font-light">Founding Technical Member</p>
             <div className="flex mt-8 gap-6 w-max">
+                <a
+                    href="https://github.com/gauthamarcot"
+                    target="_blank"
+                    rel="nopener noreferrer"
+                >
               <Icon
                 icon="akar-icons:github-fill"
                 className="h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700"
               />
+              </a>
+              <a
+                    href="https://www.linkedin.com/in/goutham-arcod/"
+                    target="_blank"
+                    rel="nopener noreferrer"
+                    >
               <Icon
                 icon="akar-icons:linkedin-fill"
                 className="h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700"
               />
+              </a>
+              <a
+                    href="https://twitter.com/ArcotGoutham"
+                    target="_blank"
+                    rel="nopener noreferrer">
               <Icon
                 icon="akar-icons:twitter-fill"
                 className="h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700"
               />
+              </a>
             </div>
           </div>
 
@@ -165,10 +182,15 @@ const AboutUs = () => {
             <h5 className="font-semibold mt-5">Narayana Chari</h5>
             <p className="font-light">Founding Financial Member</p>
             <div className="flex mt-8 gap-6 w-max">
+            <a
+                    href="https://www.linkedin.com/in/narayana-chari-arcod-44a93b53/"
+                    target="_blank"
+                    rel="nopener noreferrer">
               <Icon
                 icon="akar-icons:linkedin-fill"
                 className="h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700"
               />
+              </a>
               <Icon
                 icon="akar-icons:twitter-fill"
                 className="h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700"
@@ -232,7 +254,7 @@ const AboutUs = () => {
                   {/* Center align the items */}
                   <h5 className="font-medium text-lg">Our Progress</h5>
                   <a
-                    href="https://www.linkedin.com/company/money-sync-pay/?viewAsMember=true"
+                    href="https://www.linkedin.com/company/teleport-pay/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

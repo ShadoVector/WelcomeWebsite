@@ -9,7 +9,7 @@ function About() {
       <p className="text-light opacity-80 mx-auto">
         A group of like mind coming together
         <br />
-        However the development of Money Sync is held by 2 People.
+        However the development of Teleport Pay is held by 2 People.
       </p>
       <div className="flex mt-12 justify-between w-2/5 mx-auto">
         
