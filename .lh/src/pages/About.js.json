@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/About.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700409955328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700409955328,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\nimport { Icon } from \"@iconify/react\";\n\n\nfunction About() {\n  return (\n    <div className=\"text-center mx-20 my-12\">\n      <h1 className=\"text-6xl font-semibold my-4\">About Us</h1>\n      <p className=\"text-light opacity-80 mx-auto\">\n        A group of like mind coming together\n        <br />\n        However the development of Teleport Pay is held by 2 People.\n      </p>\n      <div className=\"flex mt-12 justify-between w-2/5 mx-auto\">\n        \n        <div className=\"flex flex-col items-center border-gray-100 rounded-md border-2 max-w-max py-5 px-10 transition-all duration-150 ease-out hover:scale-105\">\n          \n          <h5 className=\"font-semibold mt-5\">Xexon</h5>\n          <p className=\"font-light\">Founding Technical Member</p>\n          <div className=\"flex mt-8 gap-6 w-max\">\n            <Icon\n              icon=\"akar-icons:github-fill\"\n              className=\"h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700\"\n            />\n            <Icon\n              icon=\"akar-icons:instagram-fill\"\n              className=\"h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700\"\n            />\n            <Icon\n              icon=\"akar-icons:twitter-fill\"\n              className=\"h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700\"\n            />\n          </div>\n        </div>\n        <div className=\"flex flex-col items-center border-gray-100 rounded-md border-2 max-w-max py-5 px-10 transition-all duration-150 ease-out hover:scale-105\">\n          \n          <h5 className=\"font-semibold mt-5\">Nivedita M</h5>\n          <p className=\"font-light\">Founding Member</p>\n          <div className=\"flex mt-8 gap-6 w-max\">\n            <Icon\n              icon=\"akar-icons:github-fill\"\n              className=\"h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700\"\n            />\n            <Icon\n              icon=\"akar-icons:instagram-fill\"\n              className=\"h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700\"\n            />\n            <Icon\n              icon=\"akar-icons:twitter-fill\"\n              className=\"h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700\"\n            />\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n\nexport default About;"
+        }
+    ]
+}

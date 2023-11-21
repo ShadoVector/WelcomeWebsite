@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/MyComponent.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1700485813928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700486394025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n         const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n+          \n           email: userEmail, // Use the userEmail from props\n         });\n         setData(response.data.items);\n       } catch (error) {\n"
+                },
+                {
+                    "date": 1700486403646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n         const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n-          \n+          console.log(userEmail)\n           email: userEmail, // Use the userEmail from props\n         });\n         setData(response.data.items);\n       } catch (error) {\n"
+                },
+                {
+                    "date": 1700486409037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n         const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n-          console.log(userEmail)\n+          \n           email: userEmail, // Use the userEmail from props\n         });\n         setData(response.data.items);\n       } catch (error) {\n"
+                },
+                {
+                    "date": 1700487221283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,21 +8,23 @@\n \n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n-        const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n-          \n-          email: userEmail, // Use the userEmail from props\n-        });\n-        setData(response.data.items);\n+        if (userEmail) {\n+          // Only make the API call if userEmail is not empty\n+          const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n+            email: userEmail,\n+          });\n+          setData(response.data.items);\n+        }\n       } catch (error) {\n         console.error('Error fetching data:', error);\n         setError('An error occurred while fetching data.');\n       }\n     };\n \n     fetchData();\n-  }, [userEmail]); // Include userEmail in the dependency array\n+  }, [userEmail]); // Trigger the effect when userEmail changes\n \n   return (\n     <div>\n       {error ? (\n"
+                },
+                {
+                    "date": 1700487372033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,27 +4,29 @@\n \n const MyComponent = ({ userEmail }) => {\n   const [data, setData] = useState([]);\n   const [error, setError] = useState(null);\n+  const [apiCalled, setApiCalled] = useState(false); // New state variable\n \n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n-        if (userEmail) {\n-          // Only make the API call if userEmail is not empty\n+        if (userEmail && !apiCalled) {\n+          // Only make the API call if userEmail is not empty and the API hasn't been called yet\n           const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n             email: userEmail,\n           });\n           setData(response.data.items);\n+          setApiCalled(true); // Set the flag to indicate that the API call has been made\n         }\n       } catch (error) {\n         console.error('Error fetching data:', error);\n         setError('An error occurred while fetching data.');\n       }\n     };\n \n     fetchData();\n-  }, [userEmail]); // Trigger the effect when userEmail changes\n+  }, [userEmail, apiCalled]); // Trigger the effect when userEmail or apiCalled changes\n \n   return (\n     <div>\n       {error ? (\n@@ -32,10 +34,4 @@\n       ) : (\n         data.map(item => (\n           <p key={item.id}>{item.name}</p>\n         ))\n-      )}\n-    </div>\n-  );\n-};\n-\n-export default MyComponent;\n"
+                },
+                {
+                    "date": 1700487381753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,4 +34,10 @@\n       ) : (\n         data.map(item => (\n           <p key={item.id}>{item.name}</p>\n         ))\n+      )}\n+    </div>\n+  );\n+};\n+\n+export default MyComponent;\n"
+                },
+                {
+                    "date": 1700490691659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-// MyComponent.js\n import React, { useState, useEffect } from 'react';\n import axios from 'axios';\n \n const MyComponent = ({ userEmail }) => {\n"
+                },
+                {
+                    "date": 1700496631822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,38 +3,47 @@\n \n const MyComponent = ({ userEmail }) => {\n   const [data, setData] = useState([]);\n   const [error, setError] = useState(null);\n-  const [apiCalled, setApiCalled] = useState(false); // New state variable\n+  const [apiCalled, setApiCalled] = useState(false);\n \n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n         if (userEmail && !apiCalled) {\n-          // Only make the API call if userEmail is not empty and the API hasn't been called yet\n           const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n             email: userEmail,\n           });\n-          setData(response.data.items);\n-          setApiCalled(true); // Set the flag to indicate that the API call has been made\n+\n+          // Check if the response status is 200 (OK)\n+          if (response.status === 200) {\n+            setData(response.data.items);\n+            setApiCalled(true);\n+          } else {\n+            setError('Unexpected response from the server');\n+          }\n         }\n       } catch (error) {\n         console.error('Error fetching data:', error);\n         setError('An error occurred while fetching data.');\n       }\n     };\n \n     fetchData();\n-  }, [userEmail, apiCalled]); // Trigger the effect when userEmail or apiCalled changes\n+  }, [userEmail, apiCalled]);\n \n   return (\n     <div>\n       {error ? (\n         <p>Error: {error}</p>\n       ) : (\n-        data.map(item => (\n-          <p key={item.id}>{item.name}</p>\n-        ))\n+        data.length > 0 ? (\n+          data.map(item => (\n+            <p key={item.id}>{item.name}</p>\n+          ))\n+        ) : (\n+          <p>No data available</p>\n+        )\n       )}\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1700496729263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,17 @@\n           });\n \n           // Check if the response status is 200 (OK)\n           if (response.status === 200) {\n-            setData(response.data.items);\n-            setApiCalled(true);\n+            const responseData = response.data;\n+\n+            // Check if the expected 'items' property exists in the response data\n+            if (responseData && responseData.items && Array.isArray(responseData.items)) {\n+              setData(responseData.items);\n+              setApiCalled(true);\n+            } else {\n+              setError('Invalid data structure received from the server');\n+            }\n           } else {\n             setError('Unexpected response from the server');\n           }\n         }\n"
+                },
+                {
+                    "date": 1700496960229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { useState, useEffect } from 'react';\n import axios from 'axios';\n \n const MyComponent = ({ userEmail }) => {\n-  const [data, setData] = useState([]);\n+  const [message, setMessage] = useState(null);\n   const [error, setError] = useState(null);\n   const [apiCalled, setApiCalled] = useState(false);\n \n   useEffect(() => {\n@@ -17,11 +17,11 @@\n           // Check if the response status is 200 (OK)\n           if (response.status === 200) {\n             const responseData = response.data;\n \n-            // Check if the expected 'items' property exists in the response data\n-            if (responseData && responseData.items && Array.isArray(responseData.items)) {\n-              setData(responseData.items);\n+            // Check if the expected 'message' property exists in the response data\n+            if (responseData && responseData.message) {\n+              setMessage(responseData.message);\n               setApiCalled(true);\n             } else {\n               setError('Invalid data structure received from the server');\n             }\n@@ -41,16 +41,12 @@\n   return (\n     <div>\n       {error ? (\n         <p>Error: {error}</p>\n+      ) : message ? (\n+        <p>{message}</p>\n       ) : (\n-        data.length > 0 ? (\n-          data.map(item => (\n-            <p key={item.id}>{item.name}</p>\n-          ))\n-        ) : (\n-          <p>No data available</p>\n-        )\n+        <p>No data available</p>\n       )}\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1700497030791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,13 @@\n \n const MyComponent = ({ userEmail }) => {\n   const [message, setMessage] = useState(null);\n   const [error, setError] = useState(null);\n-  const [apiCalled, setApiCalled] = useState(false);\n \n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n-        if (userEmail && !apiCalled) {\n+        if (userEmail) {\n           const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n             email: userEmail,\n           });\n \n@@ -20,9 +19,8 @@\n \n             // Check if the expected 'message' property exists in the response data\n             if (responseData && responseData.message) {\n               setMessage(responseData.message);\n-              setApiCalled(true);\n             } else {\n               setError('Invalid data structure received from the server');\n             }\n           } else {\n@@ -35,9 +33,9 @@\n       }\n     };\n \n     fetchData();\n-  }, [userEmail, apiCalled]);\n+  }, [userEmail]); // Empty dependency array ensures that the effect runs only once\n \n   return (\n     <div>\n       {error ? (\n"
+                },
+                {
+                    "date": 1700497077000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       }\n     };\n \n     fetchData();\n-  }, [userEmail]); // Empty dependency array ensures that the effect runs only once\n+  }, []); // Empty dependency array ensures that the effect runs only once\n \n   return (\n     <div>\n       {error ? (\n"
+                },
+                {
+                    "date": 1700497098948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,14 @@\n \n const MyComponent = ({ userEmail }) => {\n   const [message, setMessage] = useState(null);\n   const [error, setError] = useState(null);\n+  const [apiCalled, setApiCalled] = useState(false);\n \n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n-        if (userEmail) {\n+        if (userEmail && !apiCalled) {\n           const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n             email: userEmail,\n           });\n \n@@ -19,8 +20,9 @@\n \n             // Check if the expected 'message' property exists in the response data\n             if (responseData && responseData.message) {\n               setMessage(responseData.message);\n+              setApiCalled(true);\n             } else {\n               setError('Invalid data structure received from the server');\n             }\n           } else {\n@@ -33,9 +35,9 @@\n       }\n     };\n \n     fetchData();\n-  }, []); // Empty dependency array ensures that the effect runs only once\n+  }, [userEmail, apiCalled]);\n \n   return (\n     <div>\n       {error ? (\n"
+                },
+                {
+                    "date": 1700497443720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const MyComponent = ({ userEmail }) => {\n   const [message, setMessage] = useState(null);\n   const [error, setError] = useState(null);\n   const [apiCalled, setApiCalled] = useState(false);\n-\n+  const [isRegistering, setIsRegistering] = useState(false);\n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n         if (userEmail && !apiCalled) {\n"
+                },
+                {
+                    "date": 1700497473323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const MyComponent = ({ userEmail }) => {\n   const [message, setMessage] = useState(null);\n   const [error, setError] = useState(null);\n   const [apiCalled, setApiCalled] = useState(false);\n-  const [isRegistering, setIsRegistering] = useState(false);\n+  \n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n         if (userEmail && !apiCalled) {\n"
+                },
+                {
+                    "date": 1700497529694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n   const [apiCalled, setApiCalled] = useState(false);\n   \n   useEffect(() => {\n     const fetchData = async () => {\n+      setIsRegistering(true);\n       try {\n         if (userEmail && !apiCalled) {\n           const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n             email: userEmail,\n"
+                }
+            ],
+            "date": 1700485813928,
+            "name": "Commit-0",
+            "content": "// MyComponent.js\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\n\nconst MyComponent = ({ userEmail }) => {\n  const [data, setData] = useState([]);\n  const [error, setError] = useState(null);\n\n  useEffect(() => {\n    const fetchData = async () => {\n      try {\n        const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n          email: userEmail, // Use the userEmail from props\n        });\n        setData(response.data.items);\n      } catch (error) {\n        console.error('Error fetching data:', error);\n        setError('An error occurred while fetching data.');\n      }\n    };\n\n    fetchData();\n  }, [userEmail]); // Include userEmail in the dependency array\n\n  return (\n    <div>\n      {error ? (\n        <p>Error: {error}</p>\n      ) : (\n        data.map(item => (\n          <p key={item.id}>{item.name}</p>\n        ))\n      )}\n    </div>\n  );\n};\n\nexport default MyComponent;\n"
+        }
+    ]
+}

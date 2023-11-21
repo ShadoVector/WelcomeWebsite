@@ -12,6 +12,7 @@ import {
   Slide,
   CssBaseline,
 } from '@mui/material';
+import MyComponent from '../MyComponent';
 import { Link, useNavigate } from 'react-router-dom';
 import heroImage from '../assets/hero-image.png';
 import logo from '../assets/logo.svg';
@@ -48,8 +49,8 @@ function HideOnScroll(props) {
   );
 }
 const cardStyle = {
-  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Adjust the shadow properties as needed
-  borderRadius: '8px', // Add rounded corners for a card-like appearance
+  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+  borderRadius: '8px',
 };
 
 function FeatureCard({ icon, title, description }) {
@@ -73,16 +74,54 @@ function FeatureCard({ icon, title, description }) {
 const HomePage = () => {
   const buttonStyle = {
     backgroundColor: 'white',
-    color: '#1976d2', // Default button color
-    fontWeight: 'bold', // Add font weight
-    marginRight: '10px', // Add right margin between buttons
+    color: '#1976d2',
+    fontWeight: 'bold',
+    marginRight: '10px',
   };
 
   const buttonHoverStyle = {
     backgroundColor: '#1976d2',
-    color: '#fff', // Button color on hover
+    color: '#fff',
   };
+  const [userEmail, setUserEmail] = useState('');
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [validationError, setValidationError] = useState('');
+  const [isRegistering, setIsRegistering] = useState(false);
+  
 
+  const handleRegister = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+  
+    console.log('handleRegister called');
+  
+    if (!isRegistering) {
+      try {
+        console.log('Sending API request...');
+        setIsRegistering(true);
+  
+        // Your API call here
+        // For example, use axios or fetch
+        // await axios.post('/api/register', { email: userEmail });
+  
+        setUserEmail(userEmail);
+        setIsRegistered(true);
+        setValidationError('');
+        console.log('API request successful');
+      } catch (error) {
+        console.error('Error registering:', error);
+        setValidationError('Error registering. Please try again.');
+      } finally {
+        setIsRegistering(false);
+      }
+    } else if (isRegistering) {
+      console.log('Registration is already in progress');
+    } else {
+      setValidationError('Invalid email format');
+    }
+  };
+  
+  
+  
   const navigate = useNavigate();
 
   const [isViewMoreHovered, setIsViewMoreHovered] = useState(false);
@@ -124,7 +163,6 @@ const HomePage = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  // Calculate the target date and time for the countdown
 
   return (
     <div>
@@ -153,74 +191,10 @@ const HomePage = () => {
       </HideOnScroll>
 
       <div className="airsection">
-        <div
-          class="air air1"
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            width: '100%',
-            height: '100px',
-            background:
-              'url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png)',
-            backgroundSize: '1000px 100px',
-            animation: 'wave 30s linear infinite',
-            zIndex: 1000,
-            opacity: 1,
-            animationDelay: '0s',
-          }}
-        ></div>
-        <div
-          class="air air2"
-          style={{
-            position: 'absolute',
-            bottom: 10,
-            left: 0,
-            width: '100%',
-            height: '100px',
-            background:
-              'url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png)',
-            backgroundSize: '1000px 100px',
-            animation: 'wave2 15s linear infinite',
-            zIndex: 999,
-            opacity: 0.5,
-            animationDelay: '-5s',
-          }}
-        ></div>
-        <div
-          class="air air3"
-          style={{
-            position: 'absolute',
-            bottom: 15,
-            left: 0,
-            width: '100%',
-            height: '100px',
-            background:
-              'url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png)',
-            backgroundSize: '1000px 100px',
-            animation: 'wave 30s linear infinite',
-            zIndex: 998,
-            opacity: 0.2,
-            animationDelay: '-2s',
-          }}
-        ></div>
-        <div
-          class="air air4"
-          style={{
-            position: 'absolute',
-            bottom: 20,
-            left: 0,
-            width: '100%',
-            height: '100px',
-            background:
-              'url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png)',
-            backgroundSize: '1000px 100px',
-            animation: 'wave2 5s linear infinite',
-            zIndex: 997,
-            opacity: 0.7,
-            animationDelay: '-5s',
-          }}
-        ></div>
+        <div class="air air1"></div>
+        <div class="air air2"></div>
+        <div class="air air3"></div>
+        <div class="air air4"></div>
         <section
           style={{
             marginBottom: '20%',
@@ -254,7 +228,6 @@ const HomePage = () => {
         </section>
       </div>
       <Container>
-        {/* Overview */}
         <section style={{ marginBottom: '20%', marginTop: '10%' }}>
           <div className="container">
             <FeatureCard
@@ -299,8 +272,6 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Coming Soon */}
-
         <section style={{ marginBottom: '20%' }}>
           <Card style={cardStyle}>
             <CardContent>
@@ -318,15 +289,14 @@ const HomePage = () => {
                   Be the first to know when we launch. Please register for beta
                   access!
                 </Typography>
-                <div
-                  className="coming-soon-form"
-                  style={{ marginBottom: '5%', justifyContent: 'center' }}
-                >
+                <div className="coming-soon-form" style={{ marginBottom: '5%', justifyContent: 'center' }}>
                   <TextField
                     label="Your Email Address"
                     variant="outlined"
                     style={{ marginBottom: '5%' }}
                     fullWidth
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
                     InputProps={{
                       startAdornment: (
                         <Icon
@@ -347,10 +317,16 @@ const HomePage = () => {
                         className="checkmark-icon"
                       />
                     }
+                    onClick={handleRegister}
+                    disabled={isRegistering}
                   >
                     Register
                   </Button>
+                  {validationError && <p style={{ color: 'red' }}>{validationError}</p>}
                 </div>
+
+                {/* Pass the userEmail to MyComponent only if the user is registered */}
+                {isRegistered && <MyComponent userEmail={userEmail} />}
               </CardContent>
             </Card>
           </Card>

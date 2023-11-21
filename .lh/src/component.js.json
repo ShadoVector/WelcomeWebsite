@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/component.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1700484250622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700484521061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,16 +2,21 @@\n import axios from 'axios';\n \n const MyComponent = () => {\n   const [data, setData] = useState([]);\n+  const [error, setError] = useState(null);\n \n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n-        const response = await axios.get('https://api.example.com/data');\n+        const response = await axios.post('https://api.example.com/data', {\n+          email: 'niveditamahava1@gmail.com',\n+        });\n+\n         setData(response.data); // Update state with the fetched data\n       } catch (error) {\n         console.error('Error fetching data:', error);\n+        setError('An error occurred while fetching data.'); // Set error state\n       }\n     };\n \n     fetchData(); // Call the fetchData function when the component mounts\n@@ -21,14 +26,18 @@\n     //   // cleanup logic here\n     // };\n   }, []); // Empty dependency array means this effect runs once when the component mounts\n \n-  // Render your component using the 'data' state\n+  // Render your component using the 'data' state and handle errors\n   return (\n     <div>\n-      {data.map(item => (\n-        <p key={item.id}>{item.name}</p>\n-      ))}\n+      {error ? (\n+        <p>Error: {error}</p>\n+      ) : (\n+        data.map(item => (\n+          <p key={item.id}>{item.name}</p>\n+        ))\n+      )}\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1700484590384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,14 @@\n \n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n-        const response = await axios.post('https://api.example.com/data', {\n+        const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n           email: 'niveditamahava1@gmail.com',\n         });\n \n-        setData(response.data); // Update state with the fetched data\n+        // Assuming the API returns an array of items\n+        setData(response.data.items); // Update state with the fetched data\n       } catch (error) {\n         console.error('Error fetching data:', error);\n         setError('An error occurred while fetching data.'); // Set error state\n       }\n"
+                },
+                {
+                    "date": 1700484637095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,8 @@\n       try {\n         const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n           email: 'niveditamahava1@gmail.com',\n         });\n-\n-        // Assuming the API returns an array of items\n         setData(response.data.items); // Update state with the fetched data\n       } catch (error) {\n         console.error('Error fetching data:', error);\n         setError('An error occurred while fetching data.'); // Set error state\n"
+                },
+                {
+                    "date": 1700484643697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       try {\n         const response = await axios.post('http://127.0.0.1:8000/collect-email/', {\n           email: 'niveditamahava1@gmail.com',\n         });\n-        setData(response.data.items); // Update state with the fetched data\n+        setData(response.data.items);\n       } catch (error) {\n         console.error('Error fetching data:', error);\n         setError('An error occurred while fetching data.'); // Set error state\n       }\n"
+                },
+                {
+                    "date": 1700484651412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,18 +13,13 @@\n         });\n         setData(response.data.items);\n       } catch (error) {\n         console.error('Error fetching data:', error);\n-        setError('An error occurred while fetching data.'); // Set error state\n+        setError('An error occurred while fetching data.');\n       }\n     };\n \n-    fetchData(); // Call the fetchData function when the component mounts\n-\n-    // If you want to clean up the effect (e.g., cancel the request) when the component unmounts, you can return a cleanup function:\n-    // return () => {\n-    //   // cleanup logic here\n-    // };\n+    fetchData(); \n   }, []); // Empty dependency array means this effect runs once when the component mounts\n \n   // Render your component using the 'data' state and handle errors\n   return (\n"
+                },
+                {
+                    "date": 1700484659466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n       }\n     };\n \n     fetchData(); \n-  }, []); // Empty dependency array means this effect runs once when the component mounts\n+  }, []); \n \n   // Render your component using the 'data' state and handle errors\n   return (\n     <div>\n"
+                }
+            ],
+            "date": 1700484250622,
+            "name": "Commit-0",
+            "content": "import React, { useState, useEffect } from 'react';\nimport axios from 'axios';\n\nconst MyComponent = () => {\n  const [data, setData] = useState([]);\n\n  useEffect(() => {\n    const fetchData = async () => {\n      try {\n        const response = await axios.get('https://api.example.com/data');\n        setData(response.data); // Update state with the fetched data\n      } catch (error) {\n        console.error('Error fetching data:', error);\n      }\n    };\n\n    fetchData(); // Call the fetchData function when the component mounts\n\n    // If you want to clean up the effect (e.g., cancel the request) when the component unmounts, you can return a cleanup function:\n    // return () => {\n    //   // cleanup logic here\n    // };\n  }, []); // Empty dependency array means this effect runs once when the component mounts\n\n  // Render your component using the 'data' state\n  return (\n    <div>\n      {data.map(item => (\n        <p key={item.id}>{item.name}</p>\n      ))}\n    </div>\n  );\n};\n\nexport default MyComponent;\n"
+        }
+    ]
+}
