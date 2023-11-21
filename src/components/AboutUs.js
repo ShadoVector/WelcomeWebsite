@@ -165,7 +165,7 @@ const AboutUs = () => {
                 />
               </a>
               <a
-                href="https://twitter.com/RoyalNivedita"
+                href="https://twitter.com/nivedita2307"
                 target="_blank"
                 rel="nopener noreferrer"
               >
