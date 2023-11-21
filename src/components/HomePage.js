@@ -191,10 +191,10 @@ const HomePage = () => {
       </HideOnScroll>
 
       <div className="airsection">
-        <div class="air air1"></div>
-        <div class="air air2"></div>
-        <div class="air air3"></div>
-        <div class="air air4"></div>
+      <div class='air air1' style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png)', backgroundSize: '1000px 100px', animation: 'wave 30s linear infinite', zIndex: 1000, opacity: 1, animationDelay: '0s' }}></div>
+                <div class='air air2' style={{ position: 'absolute', bottom: 10, left: 0, width: '100%', height: '100px', background: 'url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png)', backgroundSize: '1000px 100px', animation: 'wave2 15s linear infinite', zIndex: 999, opacity: 0.5, animationDelay: '-5s' }}></div>
+                <div class='air air3' style={{ position: 'absolute', bottom: 15, left: 0, width: '100%', height: '100px', background: 'url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png)', backgroundSize: '1000px 100px', animation: 'wave 30s linear infinite', zIndex: 998, opacity: 0.2, animationDelay: '-2s' }}></div>
+                <div class='air air4' style={{ position: 'absolute', bottom: 20, left: 0, width: '100%', height: '100px', background: 'url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png)', backgroundSize: '1000px 100px', animation: 'wave2 5s linear infinite', zIndex: 997, opacity: 0.7, animationDelay: '-5s' }}></div>
         <section
           style={{
             marginBottom: '20%',
