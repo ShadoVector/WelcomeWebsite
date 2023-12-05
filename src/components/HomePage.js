@@ -221,7 +221,7 @@ const HomePage = () => {
               <img
                 src={heroImage}
                 alt="heroimage"
-                style={{ width: '30%', animation: 'moveRight 1s linear' }}
+                style={{ width: '40%', animation: 'moveRight 2s linear' }}
               />
             </div>
           </div>
