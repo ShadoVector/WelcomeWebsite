@@ -217,11 +217,11 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 0.5 }}>
               <img
                 src={heroImage}
-                alt="Placeholder"
-                style={{ width: '40%', animation: 'moveRight 1s linear' }}
+                alt="heroimage"
+                style={{ width: '30%', animation: 'moveRight 1s linear' }}
               />
             </div>
           </div>
