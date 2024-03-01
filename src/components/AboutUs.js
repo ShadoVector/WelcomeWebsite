@@ -139,44 +139,6 @@ const AboutUs = () => {
               </a>
             </div>
           </div>
-
-          <div className="flex flex-col items-center border-gray-100 rounded-md border-2 max-w-max py-5 px-10 transition-all duration-150 ease-out hover:scale-105">
-            <h5 className="font-semibold mt-5">Nivedita M</h5>
-            <p className="font-light">Founding Executive Member</p>
-            <div className="flex mt-8 gap-6 w-max">
-              <a
-                href="https://github.com/Nivedita-del"
-                target="_blank"
-                rel="nopener noreferrer"
-              >
-                <Icon
-                  icon="akar-icons:github-fill"
-                  className="h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700"
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nivedita-m-2a4412179/"
-                target="_blank"
-                rel="nopener noreferrer"
-              >
-                <Icon
-                  icon="akar-icons:linkedin-fill"
-                  className="h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700"
-                />
-              </a>
-              <a
-                href="https://twitter.com/nivedita2307"
-                target="_blank"
-                rel="nopener noreferrer"
-              >
-                <Icon
-                  icon="akar-icons:twitter-fill"
-                  className="h-7 w-7 text-blue-600 cursor-pointer hover:text-blue-700"
-                />
-              </a>
-            </div>
-          </div>
-
           {/* Add more team members here */}
           <div className="flex flex-col items-center border-gray-100 rounded-md border-2 max-w-max py-5 px-10 transition-all duration-150 ease-out hover:scale-105">
             <h5 className="font-semibold mt-5">Narayana Chari</h5>
